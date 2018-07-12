@@ -22,11 +22,11 @@
             <?php
                 $a = 5;
                 $b = 3;
-                echo ("Soma: ". ($a > $b));
-                echo ("<br/>Subtracao: ". ($a < $b));
-                echo ("<br/>Multiplicacao: ". ($a == $b));
-                echo ("<br/>Divisao: ". ($a != $b));
-                echo ("<br/>Resto: ". ($a == '5'));
+                echo ("maior: ". ($a > $b));
+                echo ("<br/>menor: ". (($a < $b) ? "Sim" : "Nao"));
+                echo ("<br/>igual: ". ($a == $b));
+                echo ("<br/>diferente: ". ($a != $b));
+                echo ("<br/>igual: ". ($a === "5"));
             ?>
 
         </article>
