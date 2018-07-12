@@ -1,0 +1,143 @@
+﻿@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(220, 220, 220);
+    color: rgba(0,0,0,1);
+}
+
+div#interface {
+    width: 1000px;
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 0px auto 0px auto;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.618);
+ }
+
+p {
+    text-align: justify;
+    text-indent: 50px;
+}
+
+p#res_score::after {
+    /* Set content to be an attribute on the element */
+    content: attr(data-value);
+}
+
+p#cTimer::after {
+    /* Set content to be an attribute on the element */
+    content: attr(data-value);
+}
+
+a{
+    color: #606060;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+header#cabecalho {
+    margin-top: -10px;
+    border-bottom: 1px #606060 solid;
+    height: 75px;
+    position: relative;
+}
+
+header#cabecalho h1 {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 30px;
+    color: black;
+    text-shadow: 1px 1px 1px 1px rgba(0,0,0,0.618);
+    padding-left: 10px;
+    margin-bottom: 0px;
+}
+
+header#cabecalho h2 {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 15px;
+    color: black;
+    text-shadow: 1px 1px 1px 1px rgba(0,0,0,0.618);
+    padding-left: 15px;
+    margin-top: 1px;
+}
+
+nav#menu a {
+    color: #000000;
+    text-decoration: none;
+}
+
+nav#menu a:hover {
+    color: #ffffff;
+}
+
+section#corpo {
+    display: block;
+    width: 900px;
+    margin: auto;
+}
+
+article#noticia-principal h2 {
+    font-size: 12pt;
+    color: #606060;
+    background-color: #dddddd;
+    padding: 5px;
+}
+
+header#cabecalho-artigo h1 {
+    font-family: 'Titillium Web', 'sans-serif';
+    font-size: 20pt;
+    color: #606060;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.direita {
+    text-align: right;
+}
+
+header#cabecalho-artigo h2 {
+    font-size: 13pt;
+    color: #cecece;
+    background-color: #ffffff;
+    margin: 0px;
+}
+
+header#cabecalho-artigo h3 {
+    font-size: 9pt;
+    color: #606060;
+}
+
+footer#rodape {
+    clear: both;
+    border-top: 1px solid black;
+}
+
+footer#rodape p {
+    text-align: center;
+}
+
+/*Daqui pra baixo é a formatação da tabela*/
+
+table#tabelaspec{
+    font-size: 1pt;
+    border-spacing: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #888888;
+}
+
+table#tabelaspec td{
+    border-spacing: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.slider-wrapper input {
+    width: 600px;
+    height: 20px;
+    margin: 0;
+    transform-origin: 75px 75px;
+  }

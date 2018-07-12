@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Site Marasca</title>
+    <link rel="stylesheet" href="_css/estilo.css" />
+    <script src="_javascript/funcoes.js"></script>
+</head>
+
+<body onload="atualizaTimer();">
+    <div id="interface">
+
+        <header id="cabecalho">
+            <hgroup>
+                <h1>Site</h1>
+                <h2>Produzido por Marasca</h2>
+            </hgroup>
+        </header>
+
+        <section id="corpo">
+            <article id="noticia-principal">
+                <header id="cabecalho-artigo">
+                    <hgroup>
+                        <h1>Testes</h1>
+                        <h2> por André Luiz Marasca</h2>
+                        <h3 class="direita">Atualizado em 09/07/2018</h3>
+                    </hgroup>
+                </header>
+
+                <fieldset id="definicoesJogo">
+                    <legend>Defina o tamanho da tela da Snake</legend>
+                    <p>
+                        <label for="cM">Altura:</label>
+                        <input type="number" name="tM" id="cM" min="3" max="30" size="3" value="8" />
+                    </p>
+                    <p>
+                        <label for="cN">Largura:</label>
+                        <input type="number" name="tN" id="cN" min="3" max="30" size="3" value="15" />
+                    </p>
+                    <div class="slider-wrapper">
+                        <p>Velocidade: Rápido
+                            <input oninput="atualizaTimer()" type="range" name="tDelay" id="cDelay" min="0"
+                                max="1000" step="10" value="250" />Lento</p>
+                    </div>
+                    <p id="cTimer">Timer: </p>
+                    <button type="button" onclick="comecarJogo()">Jogar</button>
+                </fieldset>
+
+                <h2>Jogo</h2>
+                <p id="res_score">Score: </p>
+                <table id="tabelaspec">
+                </table>
+
+            </article>
+        </section>
+
+        <footer id="rodape">
+            <p>
+                Copyright 2018 - by André Luiz Marasca
+                <br/>
+                <a href="https://www.facebook.com/andre.marasca" target="_blank">Facebook</a> |
+                <a href="https://www.youtube.com/channel/UC7YlMzwNGcpQWfF7vEbSIrQ/videos?view_as=subscriber" target="_blank">YouTube</a>
+            </p>
+        </footer>
+
+    </div>
+
+    <div class="hidden">
+        <script type="text/javascript">
+		< !--//--><![CDATA[//><!--
+
+			if (document.images) {
+                img1 = new Image();
+                img2 = new Image();
+                img3 = new Image();
+
+                img1.src = "http://domain.tld/path/to/image-001.gif";
+                img2.src = "http://domain.tld/path/to/image-002.gif";
+                img3.src = "http://domain.tld/path/to/image-003.gif";
+            }
+
+		//--><!]]>
+        </script>
+    </div>
+
+    <div class="hidden">
+        <script type="text/javascript">
+		< !--//--><![CDATA[//><!--
+            var images = new Array()
+            function preload() {
+                for (i = 0; i < preload.arguments.length; i++) {
+                    images[i] = new Image();
+                    images[i].src = preload.arguments[i];
+                }
+            }
+            preload(
+                '_imagens/cabeca_baixo.png',
+                '_imagens/cabeca_cima.png',
+                '_imagens/cabeca_direita.png',
+                '_imagens/cabeca_esquerda.png',
+                '_imagens/baixo_direita.png',
+                '_imagens/baixo_esquerda.png',
+                '_imagens/cima_direita.png',
+                '_imagens/cima_esquerda.png',
+                '_imagens/direita_baixo.png',
+                '_imagens/direita_cima.png',
+                '_imagens/esquerda_baixo.png',
+                '_imagens/baixo.png',
+                '_imagens/cima.png',
+                '_imagens/direita.png',
+                '_imagens/esquerda.png',
+                '_imagens/chao.png',
+                '_imagens/rabo_baixo.png',
+                '_imagens/rabo_cima.png',
+                '_imagens/rabo_direita.png',
+                '_imagens/rabo_esquerda.png',
+                '_imagens/comida.png'
+            )
+		//--><!]]>
+        </script>
+    </div>
+</body>
+
+</html>
