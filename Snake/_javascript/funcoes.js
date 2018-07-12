@@ -17,6 +17,7 @@ ultimoTempoDelay = -1;
 meus_timers = []; // nao pode mexer
 
 function comecarJogo() {
+    preload();
     mapa = [];
     mouseI = 0;
     mouseJ = 0;
@@ -311,3 +312,33 @@ function atualizaTimer() {
     document.getElementById("cTimer").setAttribute('data-value', tempoDelay);
 }
 
+var images = new Array()
+function preload() {
+    for (i = 0; i < preload.arguments.length; i++) {
+        images[i] = new Image();
+        images[i].src = preload.arguments[i];
+    }
+}
+preload(
+    '_imagens/cabeca_baixo.png',
+    '_imagens/cabeca_cima.png',
+    '_imagens/cabeca_direita.png',
+    '_imagens/cabeca_esquerda.png',
+    '_imagens/baixo_direita.png',
+    '_imagens/baixo_esquerda.png',
+    '_imagens/cima_direita.png',
+    '_imagens/cima_esquerda.png',
+    '_imagens/direita_baixo.png',
+    '_imagens/direita_cima.png',
+    '_imagens/esquerda_baixo.png',
+    '_imagens/baixo.png',
+    '_imagens/cima.png',
+    '_imagens/direita.png',
+    '_imagens/esquerda.png',
+    '_imagens/chao.png',
+    '_imagens/rabo_baixo.png',
+    '_imagens/rabo_cima.png',
+    '_imagens/rabo_direita.png',
+    '_imagens/rabo_esquerda.png',
+    '_imagens/comida.png'
+)
