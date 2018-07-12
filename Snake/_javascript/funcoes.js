@@ -94,40 +94,40 @@ function movimento() {
         verifica_pontuacao(ii, jj);
         iden = 'a_' + ii.toString() + '_' + jj.toString();
         if (dir == 'b')
-            document.getElementById(iden).src = imagensJogo.cabeca_baixo;
+            document.getElementById(iden).src = imagensJogo.cabeca_baixo.src;
         else if (dir == 'c')
-            document.getElementById(iden).src = imagensJogo.cabeca_cima;
+            document.getElementById(iden).src = imagensJogo.cabeca_cima.src;
         else if (dir == 'd')
-            document.getElementById(iden).src = imagensJogo.cabeca_direita;
+            document.getElementById(iden).src = imagensJogo.cabeca_direita.src;
         else
-            document.getElementById(iden).src = imagensJogo.cabeca_esquerda;
+            document.getElementById(iden).src = imagensJogo.cabeca_esquerda.src;
 
         if (ultimoIValido >= 0) {
             iden = 'a_' + ultimoIValido.toString() + '_' + ultimoJValido.toString();
             if (ultimoDirValido == 'b' && dir == 'd')
-                document.getElementById(iden).src = imagensJogo.baixo_direita;
+                document.getElementById(iden).src = imagensJogo.baixo_direita.src;
             else if (ultimoDirValido == 'b' && dir == 'e')
-                document.getElementById(iden).src = imagensJogo.baixo_esquerda;
+                document.getElementById(iden).src = imagensJogo.baixo_esquerda.src;
             else if (ultimoDirValido == 'c' && dir == 'd')
-                document.getElementById(iden).src = imagensJogo.cima_direita;
+                document.getElementById(iden).src = imagensJogo.cima_direita.src;
             else if (ultimoDirValido == 'c' && dir == 'e')
-                document.getElementById(iden).src = imagensJogo.cima_esquerda;
+                document.getElementById(iden).src = imagensJogo.cima_esquerda.src;
             else if (ultimoDirValido == 'd' && dir == 'b')
-                document.getElementById(iden).src = imagensJogo.direita_baixo;
+                document.getElementById(iden).src = imagensJogo.direita_baixo.src;
             else if (ultimoDirValido == 'd' && dir == 'c')
-                document.getElementById(iden).src = imagensJogo.direita_cima;
+                document.getElementById(iden).src = imagensJogo.direita_cima.src;
             else if (ultimoDirValido == 'e' && dir == 'b')
-                document.getElementById(iden).src = imagensJogo.esquerda_baixo;
+                document.getElementById(iden).src = imagensJogo.esquerda_baixo.src;
             else if (ultimoDirValido == 'e' && dir == 'c')
-                document.getElementById(iden).src = imagensJogo.esquerda_cima;
+                document.getElementById(iden).src = imagensJogo.esquerda_cima.src;
             else if (ultimoDirValido == 'b')
-                document.getElementById(iden).src = imagensJogo.baixo;
+                document.getElementById(iden).src = imagensJogo.baixo.src;
             else if (ultimoDirValido == 'c')
-                document.getElementById(iden).src = imagensJogo.cima;
+                document.getElementById(iden).src = imagensJogo.cima.src;
             else if (ultimoDirValido == 'd')
-                document.getElementById(iden).src = imagensJogo.direita;
+                document.getElementById(iden).src = imagensJogo.direita.src;
             else
-                document.getElementById(iden).src = imagensJogo.esquerda;
+                document.getElementById(iden).src = imagensJogo.esquerda.src;
         }
 
         if (creditos == 0 && filaCorpoI.length > 1) {
@@ -135,7 +135,7 @@ function movimento() {
             var nj = filaCorpoJ.shift();
             filaDir.shift();
             iden = 'a_' + ni.toString() + '_' + nj.toString();
-            document.getElementById(iden).src = imagensJogo.chao;
+            document.getElementById(iden).src = imagensJogo.chao.src;
             mapa[ni][nj] = 0;
 
             if (filaDir.length >= 2) {
@@ -144,13 +144,13 @@ function movimento() {
                 dir = filaDir[1];
                 iden = 'a_' + ni.toString() + '_' + nj.toString();
                 if (dir == 'b')
-                    document.getElementById(iden).src = imagensJogo.rabo_baixo;
+                    document.getElementById(iden).src = imagensJogo.rabo_baixo.src;
                 else if (dir == 'c')
-                    document.getElementById(iden).src = imagensJogo.rabo_cima;
+                    document.getElementById(iden).src = imagensJogo.rabo_cima.src;
                 else if (dir == 'd')
-                    document.getElementById(iden).src = imagensJogo.rabo_direita;
+                    document.getElementById(iden).src = imagensJogo.rabo_direita.src;
                 else
-                    document.getElementById(iden).src = imagensJogo.rabo_esquerda;
+                    document.getElementById(iden).src = imagensJogo.rabo_esquerda.src;
             }
         }
         else if (creditos > 0)
@@ -242,7 +242,7 @@ function verifica_pontuacao(ii, jj) {
         document.getElementById("res_score").setAttribute('data-value', score_snake);
 
         iden = 'a_' + comidai.toString() + '_' + comidaj.toString();
-        document.getElementById(iden).src = imagensJogo.chao;
+        document.getElementById(iden).src = imagensJogo.chao.src;
         nova_posicao_comida(ii, jj);
     }
 }
@@ -255,7 +255,7 @@ function nova_posicao_comida(ii, jj) {
         comidaj = parseInt(Math.floor(Math.random() * N));
     }
     iden = 'a_' + comidai.toString() + '_' + comidaj.toString();
-    document.getElementById(iden).src = imagensJogo.comida;
+    document.getElementById(iden).src = imagensJogo.comida.src;
 }
 
 function atualiza_coordenadas(dir) {
