@@ -17,29 +17,7 @@ ultimoTempoDelay = -1;
 meus_timers = []; // nao pode mexer
 
 function comecarJogo() {
-    preload(
-        '_imagens/cabeca_baixo.png',
-        '_imagens/cabeca_cima.png',
-        '_imagens/cabeca_direita.png',
-        '_imagens/cabeca_esquerda.png',
-        '_imagens/baixo_direita.png',
-        '_imagens/baixo_esquerda.png',
-        '_imagens/cima_direita.png',
-        '_imagens/cima_esquerda.png',
-        '_imagens/direita_baixo.png',
-        '_imagens/direita_cima.png',
-        '_imagens/esquerda_baixo.png',
-        '_imagens/baixo.png',
-        '_imagens/cima.png',
-        '_imagens/direita.png',
-        '_imagens/esquerda.png',
-        '_imagens/chao.png',
-        '_imagens/rabo_baixo.png',
-        '_imagens/rabo_cima.png',
-        '_imagens/rabo_direita.png',
-        '_imagens/rabo_esquerda.png',
-        '_imagens/comida.png'
-    );
+    preload();
     mapa = [];
     mouseI = 0;
     mouseJ = 0;
@@ -116,40 +94,40 @@ function movimento() {
         verifica_pontuacao(ii, jj);
         iden = 'a_' + ii.toString() + '_' + jj.toString();
         if (dir == 'b')
-            document.getElementById(iden).src = '_imagens/cabeca_baixo.png';
+            document.getElementById(iden).src = imagensJogo.cabeca_baixo;
         else if (dir == 'c')
-            document.getElementById(iden).src = '_imagens/cabeca_cima.png';
+            document.getElementById(iden).src = imagensJogo.cabeca_cima;
         else if (dir == 'd')
-            document.getElementById(iden).src = '_imagens/cabeca_direita.png';
+            document.getElementById(iden).src = imagensJogo.cabeca_direita;
         else
-            document.getElementById(iden).src = '_imagens/cabeca_esquerda.png';
+            document.getElementById(iden).src = imagensJogo.cabeca_esquerda;
 
         if (ultimoIValido >= 0) {
             iden = 'a_' + ultimoIValido.toString() + '_' + ultimoJValido.toString();
             if (ultimoDirValido == 'b' && dir == 'd')
-                document.getElementById(iden).src = '_imagens/baixo_direita.png';
+                document.getElementById(iden).src = imagensJogo.baixo_direita;
             else if (ultimoDirValido == 'b' && dir == 'e')
-                document.getElementById(iden).src = '_imagens/baixo_esquerda.png';
+                document.getElementById(iden).src = imagensJogo.baixo_esquerda;
             else if (ultimoDirValido == 'c' && dir == 'd')
-                document.getElementById(iden).src = '_imagens/cima_direita.png';
+                document.getElementById(iden).src = imagensJogo.cima_direita;
             else if (ultimoDirValido == 'c' && dir == 'e')
-                document.getElementById(iden).src = '_imagens/cima_esquerda.png';
+                document.getElementById(iden).src = imagensJogo.cima_esquerda;
             else if (ultimoDirValido == 'd' && dir == 'b')
-                document.getElementById(iden).src = '_imagens/direita_baixo.png';
+                document.getElementById(iden).src = imagensJogo.direita_baixo;
             else if (ultimoDirValido == 'd' && dir == 'c')
-                document.getElementById(iden).src = '_imagens/direita_cima.png';
+                document.getElementById(iden).src = imagensJogo.direita_cima;
             else if (ultimoDirValido == 'e' && dir == 'b')
-                document.getElementById(iden).src = '_imagens/esquerda_baixo.png';
+                document.getElementById(iden).src = imagensJogo.esquerda_baixo;
             else if (ultimoDirValido == 'e' && dir == 'c')
-                document.getElementById(iden).src = '_imagens/esquerda_cima.png';
+                document.getElementById(iden).src = imagensJogo.esquerda_cima;
             else if (ultimoDirValido == 'b')
-                document.getElementById(iden).src = '_imagens/baixo.png';
+                document.getElementById(iden).src = imagensJogo.baixo;
             else if (ultimoDirValido == 'c')
-                document.getElementById(iden).src = '_imagens/cima.png';
+                document.getElementById(iden).src = imagensJogo.cima;
             else if (ultimoDirValido == 'd')
-                document.getElementById(iden).src = '_imagens/direita.png';
+                document.getElementById(iden).src = imagensJogo.direita;
             else
-                document.getElementById(iden).src = '_imagens/esquerda.png';
+                document.getElementById(iden).src = imagensJogo.esquerda;
         }
 
         if (creditos == 0 && filaCorpoI.length > 1) {
@@ -157,7 +135,7 @@ function movimento() {
             var nj = filaCorpoJ.shift();
             filaDir.shift();
             iden = 'a_' + ni.toString() + '_' + nj.toString();
-            document.getElementById(iden).src = '_imagens/chao.png';
+            document.getElementById(iden).src = imagensJogo.chao;
             mapa[ni][nj] = 0;
 
             if (filaDir.length >= 2) {
@@ -166,13 +144,13 @@ function movimento() {
                 dir = filaDir[1];
                 iden = 'a_' + ni.toString() + '_' + nj.toString();
                 if (dir == 'b')
-                    document.getElementById(iden).src = '_imagens/rabo_baixo.png';
+                    document.getElementById(iden).src = imagensJogo.rabo_baixo;
                 else if (dir == 'c')
-                    document.getElementById(iden).src = '_imagens/rabo_cima.png';
+                    document.getElementById(iden).src = imagensJogo.rabo_cima;
                 else if (dir == 'd')
-                    document.getElementById(iden).src = '_imagens/rabo_direita.png';
+                    document.getElementById(iden).src = imagensJogo.rabo_direita;
                 else
-                    document.getElementById(iden).src = '_imagens/rabo_esquerda.png';
+                    document.getElementById(iden).src = imagensJogo.rabo_esquerda;
             }
         }
         else if (creditos > 0)
@@ -264,7 +242,7 @@ function verifica_pontuacao(ii, jj) {
         document.getElementById("res_score").setAttribute('data-value', score_snake);
 
         iden = 'a_' + comidai.toString() + '_' + comidaj.toString();
-        document.getElementById(iden).src = '_imagens/chao.png';
+        document.getElementById(iden).src = imagensJogo.chao;
         nova_posicao_comida(ii, jj);
     }
 }
@@ -277,7 +255,7 @@ function nova_posicao_comida(ii, jj) {
         comidaj = parseInt(Math.floor(Math.random() * N));
     }
     iden = 'a_' + comidai.toString() + '_' + comidaj.toString();
-    document.getElementById(iden).src = '_imagens/comida.png';
+    document.getElementById(iden).src = imagensJogo.comida;
 }
 
 function atualiza_coordenadas(dir) {
@@ -334,10 +312,51 @@ function atualizaTimer() {
     document.getElementById("cTimer").setAttribute('data-value', tempoDelay);
 }
 
-var images = new Array()
+var imagensJogo = [];
+
 function preload() {
-    for (i = 0; i < preload.arguments.length; i++) {
-        images[i] = new Image();
-        images[i].src = preload.arguments[i];
-    }
+    imagensJogo.cabeca_baixo = new Image();
+    imagensJogo.cabeca_baixo.src = '_imagens/cabeca_baixo.png';
+    imagensJogo.cabeca_cima = new Image();
+    imagensJogo.cabeca_cima.src = '_imagens/cabeca_cima.png';
+    imagensJogo.cabeca_direita = new Image();
+    imagensJogo.cabeca_direita.src = '_imagens/cabeca_direita.png';
+    imagensJogo.cabeca_esquerda = new Image();
+    imagensJogo.cabeca_esquerda.src = '_imagens/cabeca_esquerda.png';
+    imagensJogo.baixo_direita = new Image();
+    imagensJogo.baixo_direita.src = '_imagens/baixo_direita.png';
+    imagensJogo.baixo_esquerda = new Image();
+    imagensJogo.baixo_esquerda.src = '_imagens/baixo_esquerda.png';
+    imagensJogo.cima_direita = new Image();
+    imagensJogo.cima_direita.src = '_imagens/cima_direita.png';
+    imagensJogo.cima_esquerda = new Image();
+    imagensJogo.cima_esquerda.src = '_imagens/cima_esquerda.png';
+    imagensJogo.direita_baixo = new Image();
+    imagensJogo.direita_baixo.src = '_imagens/direita_baixo.png';
+    imagensJogo.direita_cima = new Image();
+    imagensJogo.direita_cima.src = '_imagens/direita_cima.png';
+    imagensJogo.esquerda_baixo = new Image();
+    imagensJogo.esquerda_baixo.src = '_imagens/esquerda_baixo.png';
+    imagensJogo.esquerda_cima = new Image();
+    imagensJogo.esquerda_cima.src = '_imagens/esquerda_cima.png';
+    imagensJogo.baixo = new Image();
+    imagensJogo.baixo.src = '_imagens/baixo.png';
+    imagensJogo.cima = new Image();
+    imagensJogo.cima.src = '_imagens/cima.png';
+    imagensJogo.direita = new Image();
+    imagensJogo.direita.src = '_imagens/direita.png';
+    imagensJogo.esquerda = new Image();
+    imagensJogo.esquerda.src = '_imagens/esquerda.png';
+    imagensJogo.chao = new Image();
+    imagensJogo.chao.src = '_imagens/chao.png';
+    imagensJogo.rabo_baixo = new Image();
+    imagensJogo.rabo_baixo.src = '_imagens/rabo_baixo.png';
+    imagensJogo.rabo_cima = new Image();
+    imagensJogo.rabo_cima.src = '_imagens/rabo_cima.png';
+    imagensJogo.rabo_direita = new Image();
+    imagensJogo.rabo_direita.src = '_imagens/rabo_direita.png';
+    imagensJogo.rabo_esquerda = new Image();
+    imagensJogo.rabo_esquerda.src = '_imagens/rabo_esquerda.png';
+    imagensJogo.comida = new Image();
+    imagensJogo.comida.src = '_imagens/comida.png';
 }
