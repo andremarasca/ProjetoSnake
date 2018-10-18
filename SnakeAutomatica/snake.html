@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Site Marasca</title>
+    <link rel="stylesheet" href="_css/estilo.css" />
+    <script src="_javascript/funcoes.js"></script>
+</head>
+
+<body onload="atualizaTimer();">
+    <div id="interface">
+
+        <header id="cabecalho">
+            <hgroup>
+                <h1>Site</h1>
+                <h2>Produzido por Marasca</h2>
+            </hgroup>
+        </header>
+
+        <section id="corpo">
+            <article id="noticia-principal">
+                <header id="cabecalho-artigo">
+                    <hgroup>
+                        <h1>Testes</h1>
+                        <h2> por André Luiz Marasca</h2>
+                        <h3 class="direita">Atualizado em 09/07/2018</h3>
+                    </hgroup>
+                </header>
+
+                <fieldset id="definicoesJogo">
+                    <legend>Defina o tamanho da tela da Snake</legend>
+                    <p>
+                        <label for="cM">Altura:</label>
+                        <input type="number" name="tM" id="cM" min="3" max="30" size="3" value="8" />
+                    </p>
+                    <p>
+                        <label for="cN">Largura:</label>
+                        <input type="number" name="tN" id="cN" min="3" max="30" size="3" value="15" />
+                    </p>
+                    <div class="slider-wrapper">
+                        <p>Velocidade: Rápido
+                            <input oninput="atualizaTimer()" type="range" name="tDelay" id="cDelay" min="0"
+                                max="1000" step="10" value="100" />Lento</p>
+                    </div>
+                    <p id="cTimer">Timer: </p>
+                    <button type="button" onclick="comecarJogo()">Jogar</button>
+                </fieldset>
+
+                <h2>Jogo</h2>
+                <p id="res_score">Score: </p>
+                <table id="tabelaspec">
+                </table>
+
+            </article>
+        </section>
+
+        <footer id="rodape">
+            <p>
+                Copyright 2018 - by André Luiz Marasca
+                <br/>
+                <a href="https://www.facebook.com/andre.marasca" target="_blank">Facebook</a> |
+                <a href="https://www.youtube.com/channel/UC7YlMzwNGcpQWfF7vEbSIrQ/videos?view_as=subscriber" target="_blank">YouTube</a>
+            </p>
+        </footer>
+
+    </div>
+</body>
+
+</html>
